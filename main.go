@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println("Hello World")
+	// 1. get configs and override with cli flags
+
+	// 2. register routes
+
+	// 3. start server
+
 }
