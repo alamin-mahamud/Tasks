@@ -14,7 +14,7 @@ import (
 	"github.com/thewhitetulip/Tasks/views"
 )
 
-func main() {
+func getConfigVars() []string {
 	values, err := config.ReadConfig("config.json")
 	var port *string
 
@@ -31,7 +31,11 @@ func main() {
 
 		values.ServerPort = *port
 	}
+	return values
+}
 
+func main() {
+	getConfigVars()
 	views.PopulateTemplates()
 
 	//Login logout
