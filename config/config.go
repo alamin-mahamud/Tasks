@@ -34,6 +34,9 @@ func Get(filename string) (Config, error) {
 		return Config{}, err
 	}
 
-	return config, nil
+	if config.Port == "" {
+		return Config{}, errors.New("port is empty")
+	}
 
+	return config, nil
 }
