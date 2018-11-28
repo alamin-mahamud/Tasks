@@ -14,9 +14,9 @@ func checkError(err error, msg string) {
 
 func main() {
 	// 1. get configs and override with cli flags
-	values, err := config.Get()
+	values, err := config.Get("config/config.json")
 	checkError(err, "Could Not Parse Port & Other Configuration")
-	fmt.Println(values.Port)
+	fmt.Println("Hello " + values.Port)
 
 	// 2. register routes
 
