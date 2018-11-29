@@ -4,6 +4,8 @@ import (
 	"fmt"
 
 	"github.com/alamin-mahamud/go-tasks/config"
+	"github.com/alamin-mahamud/go-tasks/routes"
+	"github.com/alamin-mahamud/go-tasks/server"
 )
 
 func checkError(err error, msg string) {
@@ -23,9 +25,9 @@ func main() {
 		values.Port = port
 	}
 
-	fmt.Println("Hello " + values.Port)
-
 	// 2. register routes
+	routes.Register()
 
-	// 3. start server
+	// 3. start serve
+	server.Start(values.Port)
 }
